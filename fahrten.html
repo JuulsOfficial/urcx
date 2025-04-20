@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U.S Railroad – Fahrbetrieb</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a0a;
+            color: #f1c40f;
+        }
+
+        header, nav {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(255, 255, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+
+        nav a {
+            color: #f1c40f;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        main {
+            padding: 40px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .btn-group {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .btn-group button {
+            padding: 10px 25px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .btn-ein {
+            background: #00cc66;
+            color: black;
+        }
+
+        .btn-aus {
+            background: #cc0000;
+            color: white;
+        }
+
+        form {
+            display: none;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+            border: 1px solid #f1c40f33;
+            background: #111;
+            color: #f1c40f;
+        }
+
+        button[type="submit"] {
+            background: #f1c40f;
+            color: #000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background-color: #111;
+            box-shadow: 0 0 10px rgba(255, 255, 0, 0.1);
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #333;
+        }
+
+        th {
+            background-color: #222;
+        }
+
+        tr:hover {
+            background-color: #1c1c1c;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Fahrbetrieb – U.S Railroad</h1>
+</header>
+<nav>
+    <a href="index.html">🏠 Startseite</a>
+    <a href="fahrten.html">🚂 Fahrbetrieb</a>
+</nav>
+
+<main>
+    <div class="btn-group">
+        <button class="btn-ein" onclick="einstempeln()">✅ Einstempeln</button>
+        <button class="btn-aus" onclick="ausstempeln()">⛔ Ausstempeln</button>
+    </div>
+
+    <form id="dienstForm">
+        <label>👤 Mitarbeitername:</label>
+        <input type="text" id="name" required>
+
+        <label>🚂 Zugname:</label>
+        <input type="text" id="zug" required>
+
+        <label>📍 Startbahnhof:</label>
+        <input type="text" id="start" required>
+
+        <label>🎯 Zielbahnhof:</label>
+        <input type="text" id="ziel" required>
+
+        <label>🛤️ Route:</label>
+        <textarea id="route" required></textarea>
+
+        <label>🚛 Transporttyp:</label>
+        <select id="typ" required>
+            <option value="">-- bitte auswählen --</option>
+            <option>Passagierbetrieb</option>
+            <option>Warentransport</option>
+            <option>Amtstransport</option>
+            <option>Eigentransport</option>
+            <option>Schwerlastzug</option>
+            <option>Frachtzug</option>
+            <option>First-class Transport</option>
+        </select>
+
+        <button type="submit">Fahrt eintragen</button>
+    </form>
+
+    <table id="dienstTabelle">
+        <

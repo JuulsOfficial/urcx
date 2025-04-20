@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U.S Railroad Company Depot</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a0a;
+            color: #f1c40f;
+        }
+
+        header {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(255, 255, 0, 0.2);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+        }
+
+        main {
+            padding: 40px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #111;
+            box-shadow: 0 0 10px rgba(255, 255, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            border-bottom: 1px solid #333;
+            text-align: left;
+        }
+
+        th {
+            background-color: #222;
+        }
+
+        .status {
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .active {
+            background-color: #f1c40f;
+            color: #000;
+        }
+
+        .inactive {
+            background-color: #555;
+            color: #fff;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #f1c40f;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e0b400;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>U.S Railroad Company Depot</h1>
+    </header>
+    <main>
+        <h2>Aktive Hauptzüge</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Zugname</th>
+                    <th>Status</th>
+                    <th>Aktion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Union Pacific 4014</td>
+                    <td><span class="status inactive" id="status1">Nicht in Benutzung</span></td>
+                    <td><button onclick="toggleStatus('status1')">Umschalten</button></td>
+                </tr>
+                <tr>
+                    <td>Central Union 201</td>
+                    <td><span class="status active" id="status2">In Benutzung</span></td>
+                    <td><button onclick="toggleStatus('status2')">Umschalten</button></td>
+                </tr>
+                <tr>
+                    <td>Liberty Express 77</td>
+                    <td><span class="status inactive" id="status3">Nicht in Benutzung</span></td>
+                    <td><button onclick="toggleStatus('status3')">Umschalten</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        function toggleStatus(id) {
+            const statusSpan = document.getElementById(id);
+            const isActive = statusSpan.classList.contains("active");
+
+            if (isActive) {
+                statusSpan.classList.remove("active");
+                statusSpan.classList.add("inactive");
+                statusSpan.textContent = "Nicht in Benutzung";
+            } else {
+                statusSpan.classList.remove("inactive");
+                statusSpan.classList.add("active");
+                statusSpan.textContent = "In Benutzung";
+            }
+        }
+    </script>
+</body>
+</html>
